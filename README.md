@@ -50,6 +50,22 @@ Default settings:
 - User: postgres
 - Password: postgres
 
+Example .env:
+
+```bash
+PORT=3000
+VERSION=v1
+POSTGRES_HOST=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=myapp
+POSTGRES_PORT=5432
+PGADMIN_EMAIL=admin@admin.admin
+PGADMIN_PASSWORD=admin
+PGADMIN_PORT=5050
+VITE_SERVER_URL=http://localhost:3000/api/v1/
+```
+
 ### Backend
 
 ```bash
