@@ -1,0 +1,17 @@
+# backend/Dockerfile
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY backend/package*.json ./
+RUN npm install
+
+COPY backend/ ./
+
+# Сборка NestJS
+RUN npm run build
+
+# Запуск миграций + сид + прод сервера
+CMD ["sh", "-c", "npm run migration:run && npm run seed:run && npm run start:prod"]
+
+EXPOSE 3000

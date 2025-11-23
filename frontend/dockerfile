@@ -1,0 +1,8 @@
+FROM node:20-slim
+WORKDIR /app
+COPY frontend/package.json frontend/yarn.lock ./
+# Просто install, без frozen-lockfile (так как лок с винды), но без лишних add
+RUN yarn install 
+COPY frontend/ ./
+EXPOSE 5173
+CMD ["yarn", "dev", "--host", "0.0.0.0"]
